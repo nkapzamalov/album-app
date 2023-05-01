@@ -12,15 +12,17 @@ const PhotoCard = ({ photo, isFavorite, toggleFavorite }) => {
           )}
         </button>
         <img
-          srcSet={`${photo.thumbnailUrl} 1x, ${photo.url} 2x`}
           src={photo.thumbnailUrl}
           alt={photo.title}
           className="w-4/6 object-contain object-center rounded-md"
         />
       </div>
-      <h3 className="text-xl font-semibold mt-4 text-center">{photo.title}</h3>
+      <p className="text-base font-normal mt-4 text-center">{photo.title}</p>
     </div>
   );
 };
 
 export default PhotoCard;
+
+
+
