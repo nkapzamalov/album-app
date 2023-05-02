@@ -1,6 +1,6 @@
 import { HeartIcon } from '@heroicons/react/24/solid';
 
-const PhotoCard = ({ photo, isFavorite, toggleFavorite }) => {
+const PhotoCard = ({ photo, isFavorite, toggleFavorite, onClick }) => {
   return (
     <div className="bg-white shadow-md rounded-md p-4 transition duration-300 transform hover:scale-105 relative">
       <div className='flex justify-center'>
@@ -14,7 +14,8 @@ const PhotoCard = ({ photo, isFavorite, toggleFavorite }) => {
         <img
           src={photo.thumbnailUrl}
           alt={photo.title}
-          className="w-4/6 object-contain object-center rounded-md"
+          className="w-4/6 object-contain object-center rounded-md cursor-pointer"
+          onClick={onClick}
         />
       </div>
       <p className="text-base font-normal mt-4 text-center">{photo.title}</p>
