@@ -8,6 +8,7 @@ import { EmptyAlbum, PhotoGrid } from "../../../../components/PhotoGrid";
 const PhotosPage = ({ photos }) => {
   const { albumId } = useParams();
   const dispatch = useDispatch();
+
   const favorites = useSelector((state) => state.favorites.favorites);
 
   if (isNaN(albumId)) {

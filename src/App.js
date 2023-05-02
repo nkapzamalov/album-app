@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
 import ReactLoading from "react-loading";
-import AlbumGrid from "./components/AlbumGrid";
-import PhotosPage from "../src/pages/photos/by/album/id";
-import NotFound from "./pages/NotFound";
-import Favorites from "./pages/Favorites"
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
+import createAppRouter from "./routes";
 
 
 export default function App() {
@@ -41,25 +38,7 @@ export default function App() {
 
 
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <AlbumGrid albums={albums} />,
-    },
-    {
-      path: `/photos/by/album/:albumId`,
-      element: <PhotosPage photos={photos} />,
-    },
-    {
-      path: "/favorites",
-      element: <Favorites />,
-    },
-    {
-      path: "*",
-      element: <NotFound />,
-    },
-
-  ]);
+  const router = createAppRouter(albums, photos)
 
   return (
     <div className="container mx-auto p-4">
