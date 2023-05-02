@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import ReactLoading from "react-loading";
 import { RouterProvider } from "react-router-dom";
 import createAppRouter from "./routes";
+import Loader from "./components/Loader";
 
 
 export default function App() {
@@ -42,11 +42,9 @@ export default function App() {
 
   return (
     <div className="container mx-auto p-4">
-      {isLoading ? (
-        <div className="flex justify-center items-center h-screen">
-          <ReactLoading type="balls" color="#6B7280" height={32} width={32} />
-        </div>
-      ) : < RouterProvider router={router} />
+      {isLoading ?
+        <Loader /> :
+        < RouterProvider router={router} />
       }
     </div>
   );

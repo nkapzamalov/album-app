@@ -8,13 +8,12 @@ export const favoritesSlice = createSlice({
   reducers: {
     addFavorite: (state, action) => {
       state.favorites.push(action.payload);
-      // return state;
+
     },
     removeFavorite: (state, action) => {
       state.favorites = state.favorites.filter(
         (favorite) => favorite.id !== action.payload
       );
-      // return state;
     },
   },
 });
